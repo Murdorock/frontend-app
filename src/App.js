@@ -28,7 +28,7 @@ function App() {
 
   const add = ()=>{
     // Realiza una solicitud POST al servidor en la ruta "http://localhost:3001/create"
-    Axios.post("http://localhost:3001/create",{
+    Axios.post("https://backend-app-gopy.onrender.com:3001/create",{
       cedula:cedula, // Envía el valor de la cédula
       nombre:nombre, // Envía el valor del nombre
       apellido:apellido, // Envía el valor del apellido
@@ -55,7 +55,7 @@ function App() {
 
   const update = ()=>{
     // Realiza una solicitud POST al servidor en la ruta "http://localhost:3001/update"
-    Axios.put("http://localhost:3001/update",{
+    Axios.put("https://backend-app-gopy.onrender.com:3001/update",{
       idClientes:idClientes, // Envía el valor de IdClientes
       cedula:cedula, // Envía el valor de la cédula
       nombre:nombre, // Envía el valor del nombre
@@ -94,7 +94,7 @@ function App() {
     }).then((result) => {
       // Después de que se complete la solicitud, realiza las siguientes acciones:
       if (result.isConfirmed) {
-        Axios.delete(`http://localhost:3001/delete/${val.idClientes}`).then((res)=>{
+        Axios.delete(`https://backend-app-gopy.onrender.com:3001/delete/${val.idClientes}`).then((res)=>{
           getClientes(); // Actualiza la lista de clientes
           limpiarCampos(); // Limpia los campos de entrada 
           Swal.fire({
@@ -143,7 +143,7 @@ function App() {
 
   const getClientes = ()=>{
     // Realiza una solicitud GET al servidor en la ruta "http://localhost:3001/clientes"
-    Axios.get("http://localhost:3001/clientes").then((response)=>{
+    Axios.get("https://backend-app-gopy.onrender.com:3001/clientes").then((response)=>{
       // Después de recibir la respuesta, actualiza el estado "clientes" con los datos obtenidos
       setClientes(response.data);
     });
